@@ -20,6 +20,11 @@ func CreateUser(ctx *gin.Context) {
 		return
 	}
 
+	if err := user.HashPassword(user.Password); err != nil {
+		ctx.AbortWithError(http.StatusBadRequest, err)
+		return
+	}
+
 	err := db.Create(&user).Error
 	if err != nil {
 		ctx.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{

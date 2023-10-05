@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "49a74cce-026a-4b76-8005-b20f96219114",
+		"_postman_id": "b43c2b1c-828a-4eee-9cc4-66e289e1fc89",
 		"name": "Otto",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18909708"
 	},
 	"item": [
 		{
@@ -54,7 +55,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Vika\",\n    \"email\": \"vikagmail.com\",\n    \"password\": \"vika\"\n}"
+							"raw": "{\n    \"name\": \"Vika Putri\",\n    \"email\": \"vikaputri@gmail.com\",\n    \"password\": \"vika\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/users",
@@ -100,7 +101,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/3",
+							"raw": "http://localhost:8080/users/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -108,7 +109,7 @@
 							"port": "8080",
 							"path": [
 								"users",
-								"3"
+								"1"
 							]
 						}
 					},
@@ -123,10 +124,16 @@
 					"name": "Create Task",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmlrYSIsImVtYWlsIjoidmlrYUBnbWFpbC5jb20iLCJleHAiOjE2OTY0NjU1Mzh9.oFgLNcesJMGyvAva2uWme1LM5S5HhWy5a9juUVFHyM0",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_id\": 1,\n\t\"title\" : \"Vika\",\n\t\"description\": \"Nama Saya\",\n\t\"status\": \"available\"\n}",
+							"raw": "{\n    \"user_id\": 4,\n\t\"title\" : \"Vika\",\n\t\"description\": \"Nama Saya\",\n\t\"status\": \"done\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -150,8 +157,17 @@
 				{
 					"name": "Get All Task",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmlrYSIsImVtYWlsIjoidmlrYUBnbWFpbC5jb20iLCJleHAiOjE2OTY0NjU1Mzh9.oFgLNcesJMGyvAva2uWme1LM5S5HhWy5a9juUVFHyM0",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8080/tasks",
 							"protocol": "http",
@@ -170,7 +186,13 @@
 					"name": "Gel Task Based ID",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmlrYSIsImVtYWlsIjoidmlrYUBnbWFpbC5jb20iLCJleHAiOjE2OTY0NjU1Mzh9.oFgLNcesJMGyvAva2uWme1LM5S5HhWy5a9juUVFHyM0",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8080/tasks/1",
 							"protocol": "http",
@@ -190,7 +212,13 @@
 					"name": "Update Task",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmlrYSIsImVtYWlsIjoidmlrYUBnbWFpbC5jb20iLCJleHAiOjE2OTY0NjU1Mzh9.oFgLNcesJMGyvAva2uWme1LM5S5HhWy5a9juUVFHyM0",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"user_id\": 1,\n\t\"title\" : \"Vika Putri\",\n\t\"description\": \"Nama Saya\",\n\t\"status\": \"available\"\n}"
@@ -213,12 +241,53 @@
 				{
 					"name": "Delete Task",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmlrYSIsImVtYWlsIjoidmlrYUBnbWFpbC5jb20iLCJleHAiOjE2OTY0NjU1Mzh9.oFgLNcesJMGyvAva2uWme1LM5S5HhWy5a9juUVFHyM0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/tasks/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tasks",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Get Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"vika@gmail.com\",\n    \"password\": \"vika\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
